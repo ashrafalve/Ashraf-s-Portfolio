@@ -11,6 +11,7 @@ export default defineConfig(({ mode }: ConfigEnv) => ({
     },
   },
   plugins: [react()],
+  base: process.env.VITE_BASE_URL || "/Ashraf-s-Protfolio",
 
   resolve: {
     alias: {
