@@ -90,7 +90,7 @@ const Hero = () => {
                 View Projects <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="rounded-full gap-2 px-8" asChild>
-                <a href="/src/assets/files/Ashraf-Ahmed-Alve-Updated-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Ashraf-Ahmed-Alve-Updated-Resume.pdf" target="_blank" rel="noopener noreferrer">
                   View CV <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
