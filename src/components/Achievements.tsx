@@ -79,7 +79,7 @@ const BlogSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((achievement, idx) => (
             <div key={idx} className="group relative bg-card rounded-2xl p-[2px] cursor-pointer" style={{
-              background: 'linear-gradient(45deg, hsl(15 90% 55%), hsl(15 90% 55%) 50%, transparent 50%, transparent)',
+              background: 'linear-gradient(45deg, hsl(var(--primary)), hsl(var(--primary)) 50%, transparent 50%, transparent)',
               backgroundSize: '200% 200%',
               animation: 'neon-rotate 3s linear infinite',
             }}>
@@ -90,7 +90,7 @@ const BlogSection = () => {
                 }
               `}</style>
               <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors h-full" style={{
-                boxShadow: '0 0 15px hsl(15 90% 55% / 0.2)',
+                boxShadow: '0 0 15px hsl(var(--primary) / 0.2)',
               }}>
                 <div className={`w-14 h-14 rounded-xl ${achievement.bgColor} flex items-center justify-center mb-4`}>
                   <achievement.icon className={`w-7 h-7 ${achievement.color}`} />

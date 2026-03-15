@@ -43,6 +43,48 @@
     --sidebar-border: 0 0% 15%;
     --sidebar-ring: 15 90% 55%;
   }
+
+  /* Teal/Cyan Theme - Professional with #5eead4 base */
+  .teal {
+    --background: 180 30% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 180 25% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 180 25% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 173 82% 53%; /* #5eead4 */
+    --primary-foreground: 180 30% 6%;
+
+    --secondary: 180 20% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 180 15% 18%;
+    --muted-foreground: 180 10% 65%;
+
+    --accent: 180 20% 12%;
+    --accent-foreground: 173 82% 53%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 15% 20%;
+    --input: 180 15% 20%;
+    --ring: 173 82% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 180 30% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 173 82% 53%;
+    --sidebar-primary-foreground: 180 30% 6%;
+    --sidebar-accent: 180 20% 12%;
+    --sidebar-accent-foreground: 173 82% 53%;
+    --sidebar-border: 180 15% 20%;
+    --sidebar-ring: 173 82% 53%;
+  }
 }
 
 @layer base {
@@ -52,6 +94,16 @@
 
   html {
     background: linear-gradient(135deg, #0F0E0F 0%, #1a0808 25%, #0F0E0F 50%, #2a0a0a 75%, #0F0E0F 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Teal theme background */
+  .teal html,
+  .teal body {
+    background: linear-gradient(135deg, #0a1414 0%, #0d1a1a 25%, #0f2020 50%, #0a1414 75%, #0d1a1a 100%);
     background-attachment: fixed;
     min-height: 100vh;
     background-size: 400% 400%;
@@ -167,4 +219,25 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Teal Gradient Theme */
+.bg-gradient-teal {
+  background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 50%, #14b8a6 100%);
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, #5eead4 0%, #2dd4bf 50%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark teal background variations */
+.bg-teal-dark {
+  background: linear-gradient(135deg, #134e4a 0%, #115e59 50%, #0f766e 100%);
+}
+
+.bg-teal-light {
+  background: linear-gradient(135deg, #5eead4 0%, #99f6e4 100%);
 }

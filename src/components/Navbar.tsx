@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowRight, Menu, X, Flame, Droplets } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 import { Link as RouterLink } from "react-router-dom";
 
 const navLinks = [
@@ -15,6 +16,16 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "teal" : "dark");
+  };
 
   const scrollTo = (id: string) => {
     if (window.location.pathname !== "/") {
@@ -69,6 +80,20 @@ const Navbar = () => {
           Contact Me <ArrowRight className="w-4 h-4" />
         </Button>
 
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors ml-2"
+          aria-label="Toggle theme"
+          disabled={!mounted}
+        >
+          {mounted && (resolvedTheme === "dark" ? (
+            <Droplets className="w-5 h-5 text-[#5eead4]" />
+          ) : (
+            <Flame className="w-5 h-5 text-orange-500" />
+          ))}
+        </button>
+
         <button
           className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -91,6 +116,25 @@ const Navbar = () => {
           <Button className="w-full rounded-full gap-2" onClick={() => scrollTo("contact")}>
             Contact Me <ArrowRight className="w-4 h-4" />
           </Button>
+          {/* Theme Toggle for Mobile */}
+          <button
+            onClick={toggleTheme}
+            className="flex items-center gap-2 w-full p-2 rounded-lg bg-secondary hover:bg-accent transition-colors"
+            aria-label="Toggle theme"
+            disabled={!mounted}
+          >
+            {mounted && (resolvedTheme === "dark" ? (
+              <>
+                <Droplets className="w-5 h-5 text-[#5eead4]" />
+                <span className="text-muted-foreground">Switch to Teal Theme</span>
+              </>
+            ) : (
+              <>
+                <Flame className="w-5 h-5 text-orange-500" />
+                <span className="text-muted-foreground">Switch to Fire Theme</span>
+              </>
+            ))}
+          </button>
         </div>
       )}
     </header>

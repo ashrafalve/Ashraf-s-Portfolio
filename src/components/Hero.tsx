@@ -98,13 +98,17 @@ const Hero = () => {
           </div>
 
           <div className="animate-slide-in-right">
-            <div className="bg-card border border-border rounded-2xl p-1 max-w-xs mx-auto">
+            {/* Circular Profile Card with Flip Animation */}
+            <div className="relative max-w-sm mx-auto">
               {/* Flip Card Container */}
-              <div className="relative w-full aspect-square" style={{ perspective: '1000px' }}>
+              <div 
+                className="relative w-72 h-72 mx-auto cursor-pointer"
+                style={{ perspective: '1000px' }}
+                onClick={() => setShowProfileInfo(!showProfileInfo)}
+              >
                 {/* Flipper */}
                 <div 
-                  className="w-full h-full cursor-pointer"
-                  onClick={() => setShowProfileInfo(!showProfileInfo)}
+                  className="w-full h-full"
                   style={{
                     transition: 'transform 0.6s',
                     transformStyle: 'preserve-3d',
@@ -113,23 +117,34 @@ const Hero = () => {
                 >
                   {/* Front - Profile Photo with Neon Border */}
                   <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden' }}>
-                    {/* Rotating Neon Border */}
-                    <div className="relative w-full h-full rounded-xl overflow-hidden" style={{
-                      background: 'linear-gradient(45deg, hsl(15 90% 55%), hsl(15 90% 55%) 50%, transparent 50%, transparent)',
-                      backgroundSize: '200% 200%',
-                      animation: 'neon-rotate 3s linear infinite',
-                      padding: '3px',
-                    }}>
+                    {/* Animated Gradient Border Ring */}
+                    <div 
+                      className="relative w-full h-full rounded-full"
+                      style={{
+                        background: 'linear-gradient(45deg, hsl(var(--primary)), hsl(var(--primary)) 50%, transparent 50%, transparent)',
+                        backgroundSize: '200% 200%',
+                        animation: 'neon-rotate 3s linear infinite',
+                        padding: '4px',
+                      }}
+                    >
                       <style>{`
                         @keyframes neon-rotate {
                           0% { background-position: 0% 50%; }
                           100% { background-position: 200% 50%; }
                         }
                       `}</style>
-                      <div className="w-full h-full rounded-xl overflow-hidden" style={{
-                        background: 'hsl(var(--card))',
-                        boxShadow: '0 0 20px hsl(15 90% 55% / 0.5), 0 0 40px hsl(15 90% 55% / 0.3), inset 0 0 20px hsl(15 90% 55% / 0.1)',
-                      }}>
+                      {/* Inner Circle with Glow */}
+                      <div 
+                        className="w-full h-full rounded-full overflow-hidden"
+                        style={{
+                          background: 'hsl(var(--card))',
+                          boxShadow: `
+                            0 0 30px hsl(var(--primary) / 0.4),
+                            0 0 60px hsl(var(--primary) / 0.2),
+                            inset 0 0 30px hsl(var(--primary) / 0.1)
+                          `,
+                        }}
+                      >
                         <img 
                           src="/profile.jpg" 
                           alt="Ashraf Ahmed Alve" 
@@ -139,41 +154,44 @@ const Hero = () => {
                     </div>
                   </div>
                   
-                  {/* Back - Profile Info */}
+                  {/* Back - Profile Stats */}
                   <div 
-                    className="bg-secondary rounded-xl p-2 flex flex-col justify-center"
+                    className="absolute inset-0 rounded-full flex flex-col justify-center items-center p-4"
                     style={{ 
-                      position: 'absolute', 
-                      inset: 0, 
                       backfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)',
+                      background: 'hsl(var(--card))',
+                      boxShadow: `
+                        0 0 30px hsl(var(--primary) / 0.4),
+                        0 0 60px hsl(var(--primary) / 0.2)
+                      `,
                     }}
                   >
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-2 text-center w-full">
                       {[
-                        { value: "1+", label: "Years Experience" },
-                        { value: "8+", label: "Projects Completed" },
-                        { value: "Top 15%", label: "Batch Ranking" },
-                        { value: "4+", label: "Awards Won" },
+                        { value: "1+", label: "Years" },
+                        { value: "8+", label: "Projects" },
+                        { value: "Top 15%", label: "Batch" },
+                        { value: "4+", label: "Awards" },
                       ].map((stat, idx) => (
-                        <div key={idx} className="bg-card rounded-xl p-3 text-center">
-                          <p className="text-2xl font-bold text-primary">{stat.value}</p>
+                        <div key={idx} className="p-2">
+                          <p className="text-xl font-bold text-primary">{stat.value}</p>
                           <p className="text-muted-foreground text-xs">{stat.label}</p>
                         </div>
                       ))}
                     </div>
-                    <div className="mt-4 p-3 bg-card rounded-xl">
-                      <p className="text-foreground font-semibold text-sm mb-1">Education</p>
-                      <p className="text-muted-foreground text-xs">BSc in Computer Science & Engineering</p>
-                      <p className="text-primary text-sm font-medium">University of Asia Pacific</p>
-                      <p className="text-muted-foreground text-xs mt-1">Top 15% • VC & Dean's Award</p>
-                    </div>
                   </div>
                 </div>
               </div>
-              
-              <p className="text-center text-muted-foreground text-sm mt-4">
-                {showProfileInfo ? 'Click to see photo' : 'Click to see profile info'}
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full border-2 border-primary/30"></div>
+              <div className="absolute -bottom-4 -left-8 w-4 h-4 rounded-full bg-primary/20"></div>
+              <div className="absolute -top-8 -right-6 w-6 h-6 rounded-full border border-primary/20"></div>
+
+              {/* Click hint */}
+              <p className="text-center text-muted-foreground text-sm mt-6">
+                {showProfileInfo ? '• Click to see photo' : '• Click to see stats'}
               </p>
             </div>
           </div>

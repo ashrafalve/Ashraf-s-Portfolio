@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CustomCursor from "@/components/CustomCursor";
@@ -29,11 +30,18 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <CustomCursor />
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+      <ThemeProvider
+        defaultTheme="dark"
+        attribute="class"
+        enableSystem={false}
+        disableTransitionOnChange
+        themes={["dark", "teal"]}
+      >
+        <TooltipProvider>
+          <CustomCursor />
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />
@@ -78,11 +86,12 @@ const App = () => {
         
         <button
           onClick={() => setIsGameOpen(true)}
-          className="fixed top-24 right-6 z-40 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-bold hover:shadow-[0_0_30px_hsl(15_90%_55%/0.6)] hover:scale-110 transition-all duration-300 cursor-pointer animate-pulse"
+          className="fixed top-24 right-6 z-40 bg-primary text-primary-foreground px-6 py-3 rounded-full text-sm font-bold hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.6)] hover:scale-110 transition-all duration-300 cursor-pointer animate-pulse"
         >
           🎮 Bored? Click Here!
         </button>
       </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };

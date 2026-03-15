@@ -142,7 +142,7 @@ const CTAFooter = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-10">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl font-bold text-primary">AA</span>
+                <span className="text-2xl font-bold text-primary">AAA</span>
               </div>
               <p className="text-muted-foreground text-sm">
                 Web & App Developer | UI/UX Designer | CSE Graduate

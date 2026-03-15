@@ -14,7 +14,7 @@ const experiences = [
     num: "02",
     title: "Website Manager & Designer",
     company: "Gadget Track BD, Dhaka",
-    period: "June 2023 – Present",
+    period: "June 2023 – January 2026",
     desc: "Managed website content, UI updates, and product listings, ensuring smooth online operation and enhanced user experience. Designed visually engaging graphics for marketing, social media, and promotional campaigns.",
     skills: ["Website Management", "UI Design", "Graphic Design", "Content Strategy"],
   },

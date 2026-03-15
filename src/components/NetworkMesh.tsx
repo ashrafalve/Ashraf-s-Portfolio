@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 interface Point {
   x: number;
@@ -8,7 +9,7 @@ interface Point {
   originX: number;
   originY: number;
   size: number;
-  isRed: boolean;
+  isColored: boolean;
 }
 
 const NetworkMesh = () => {
@@ -16,6 +17,22 @@ const NetworkMesh = () => {
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const pointsRef = useRef<Point[]>([]);
   const animRef = useRef<number>(0);
+  const { resolvedTheme } = useTheme();
+
+  // Get theme-aware colors
+  const getThemeColors = () => {
+    if (resolvedTheme === "teal") {
+      return {
+        primary: "94, 234, 212",  // #5eead4 in RGB
+        primaryGlow: "94, 234, 212",
+      };
+    }
+    // Default fire theme
+    return {
+      primary: "249, 115, 22",  // Orange in RGB
+      primaryGlow: "249, 115, 22",
+    };
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -40,7 +57,7 @@ const NetworkMesh = () => {
       for (let i = 0; i < count; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
-        const isRed = Math.random() < 0.4;
+        const isColored = Math.random() < 0.4;
         const angle = Math.random() * Math.PI * 2;
         const speed = 0.5 + Math.random() * 0.5;
         pts.push({
@@ -49,8 +66,8 @@ const NetworkMesh = () => {
           vy: Math.sin(angle) * speed,
           originX: x,
           originY: y,
-          size: isRed ? 2.5 + Math.random() * 2 : 1 + Math.random() * 1.5,
-          isRed,
+          size: isColored ? 2.5 + Math.random() * 2 : 1 + Math.random() * 1.5,
+          isColored,
         });
       }
       pointsRef.current = pts;
@@ -63,6 +80,7 @@ const NetworkMesh = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const mouse = mouseRef.current;
       const pts = pointsRef.current;
+      const colors = getThemeColors();
 
       // Update positions
       for (let i = 0; i < pts.length; i++) {
@@ -117,11 +135,11 @@ const NetworkMesh = () => {
 
       // Draw points
       for (const p of pts) {
-        if (p.isRed) {
-          // Red glowing dots
-          ctx.shadowColor = "rgba(229, 57, 53, 0.6)";
+        if (p.isColored) {
+          // Theme-colored glowing dots
+          ctx.shadowColor = `rgba(${colors.primaryGlow}, 0.6)`;
           ctx.shadowBlur = 8;
-          ctx.fillStyle = "rgba(229, 57, 53, 0.9)";
+          ctx.fillStyle = `rgba(${colors.primary}, 0.9)`;
         } else {
           ctx.shadowColor = "transparent";
           ctx.shadowBlur = 0;
@@ -163,7 +181,7 @@ const NetworkMesh = () => {
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <canvas
