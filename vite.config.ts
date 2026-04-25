@@ -5,7 +5,8 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd());
-  const baseUrl = env.VITE_BASE_URL || "/Ashraf-s-Portfolio";
+  // If we're on Vercel, use root. If on GitHub Pages (local dev/prod build), use subpath.
+  const baseUrl = process.env.VERCEL ? "/" : (env.VITE_BASE_URL || "/Ashraf-s-Portfolio");
 
   return {
     server: {
