@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Menu, X, Flame, Droplets } from "lucide-react";
+import { ArrowRight, Menu, X, Flame, Droplets, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { Link as RouterLink } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -23,9 +29,7 @@ const Navbar = () => {
     setMounted(true);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "teal" : "dark");
-  };
+  // Removed cycle logic in favor of direct selection via dropdown
 
   const scrollTo = (id: string) => {
     if (window.location.pathname !== "/") {
@@ -80,19 +84,49 @@ const Navbar = () => {
           Contact Me <ArrowRight className="w-4 h-4" />
         </Button>
 
-        {/* Theme Toggle Button */}
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors ml-2"
-          aria-label="Toggle theme"
-          disabled={!mounted}
-        >
-          {mounted && (resolvedTheme === "dark" ? (
-            <Droplets className="w-5 h-5 text-[#5eead4]" />
-          ) : (
-            <Flame className="w-5 h-5 text-orange-500" />
-          ))}
-        </button>
+        {/* Theme Toggle Dropdown */}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <button
+              className="p-2 rounded-full bg-secondary hover:bg-accent transition-colors ml-2 flex items-center justify-center outline-none animate-theme-pulse shadow-[0_0_10px_rgba(0,0,0,0.1)]"
+              aria-label="Toggle theme"
+              disabled={!mounted}
+            >
+              {mounted && (
+                resolvedTheme === "dark" ? (
+                  <Flame className="w-5 h-5 text-[#f59614]" />
+                ) : resolvedTheme === "teal" ? (
+                  <Droplets className="w-5 h-5 text-[#19cdb0]" />
+                ) : (
+                  <Moon className="w-5 h-5 text-slate-400" />
+                )
+              )}
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border-border">
+            <DropdownMenuItem 
+              onClick={() => setTheme("dark")}
+              className="flex items-center gap-2 cursor-pointer focus:bg-primary/10"
+            >
+              <Flame className="w-4 h-4 text-[#f59614]" />
+              <span>Fire Theme</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem 
+              onClick={() => setTheme("teal")}
+              className="flex items-center gap-2 cursor-pointer focus:bg-primary/10"
+            >
+              <Droplets className="w-4 h-4 text-[#19cdb0]" />
+              <span>Teal Theme</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem 
+              onClick={() => setTheme("ash")}
+              className="flex items-center gap-2 cursor-pointer focus:bg-primary/10"
+            >
+              <Moon className="w-4 h-4 text-slate-400" />
+              <span>Ash Theme</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         <button
           className="md:hidden text-foreground"
@@ -116,25 +150,33 @@ const Navbar = () => {
           <Button className="w-full rounded-full gap-2" onClick={() => scrollTo("contact")}>
             Contact Me <ArrowRight className="w-4 h-4" />
           </Button>
-          {/* Theme Toggle for Mobile */}
-          <button
-            onClick={toggleTheme}
-            className="flex items-center gap-2 w-full p-2 rounded-lg bg-secondary hover:bg-accent transition-colors"
-            aria-label="Toggle theme"
-            disabled={!mounted}
-          >
-            {mounted && (resolvedTheme === "dark" ? (
-              <>
-                <Droplets className="w-5 h-5 text-[#5eead4]" />
-                <span className="text-muted-foreground">Switch to Teal Theme</span>
-              </>
-            ) : (
-              <>
-                <Flame className="w-5 h-5 text-orange-500" />
-                <span className="text-muted-foreground">Switch to Fire Theme</span>
-              </>
-            ))}
-          </button>
+          {/* Theme Selection for Mobile */}
+          <div className="pt-4 border-t border-border space-y-2">
+            <p className="text-xs font-semibold text-muted-foreground px-2 uppercase tracking-wider">Select Theme</p>
+            <div className="grid grid-cols-3 gap-2">
+              <button
+                onClick={() => setTheme("dark")}
+                className={`flex flex-col items-center gap-2 p-3 rounded-xl border transition-all ${resolvedTheme === 'dark' ? 'bg-primary/10 border-primary' : 'bg-secondary border-transparent'}`}
+              >
+                <Flame className="w-5 h-5 text-[#f59614]" />
+                <span className="text-[10px] font-bold">Fire</span>
+              </button>
+              <button
+                onClick={() => setTheme("teal")}
+                className={`flex flex-col items-center gap-2 p-3 rounded-xl border transition-all ${resolvedTheme === 'teal' ? 'bg-primary/10 border-primary' : 'bg-secondary border-transparent'}`}
+              >
+                <Droplets className="w-5 h-5 text-[#19cdb0]" />
+                <span className="text-[10px] font-bold">Teal</span>
+              </button>
+              <button
+                onClick={() => setTheme("ash")}
+                className={`flex flex-col items-center gap-2 p-3 rounded-xl border transition-all ${resolvedTheme === 'ash' ? 'bg-primary/10 border-primary' : 'bg-secondary border-transparent'}`}
+              >
+                <Moon className="w-5 h-5 text-slate-400" />
+                <span className="text-[10px] font-bold">Ash</span>
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </header>

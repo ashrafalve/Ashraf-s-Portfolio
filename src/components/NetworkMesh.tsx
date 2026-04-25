@@ -27,10 +27,16 @@ const NetworkMesh = () => {
         primaryGlow: "94, 234, 212",
       };
     }
+    if (resolvedTheme === "ash") {
+      return {
+        primary: "226, 232, 240", // Brighter Silver/Ash in RGB
+        primaryGlow: "226, 232, 240",
+      };
+    }
     // Default fire theme
     return {
-      primary: "249, 115, 22",  // Orange in RGB
-      primaryGlow: "249, 115, 22",
+      primary: "245, 150, 20",  // Premium Amber/Dark Yellow in RGB
+      primaryGlow: "245, 150, 20",
     };
   };
 

@@ -13,7 +13,7 @@
     --popover: 0 8% 5%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 15 90% 55%;
+    --primary: 35 92% 48%; /* Premium Amber/Dark Yellow */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
@@ -30,18 +30,18 @@
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 15 90% 55%;
+    --ring: 35 92% 48%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 6%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 15 90% 55%;
+    --sidebar-primary: 35 92% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 12%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 15 90% 55%;
+    --sidebar-ring: 35 92% 48%;
   }
 
   /* Teal/Cyan Theme - Professional with #5eead4 base */
@@ -55,7 +55,7 @@
     --popover: 180 25% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 173 82% 53%; /* #5eead4 */
+    --primary: 173 75% 42%; /* Darker Teal */
     --primary-foreground: 180 30% 6%;
 
     --secondary: 180 20% 12%;
@@ -65,25 +65,67 @@
     --muted-foreground: 180 10% 65%;
 
     --accent: 180 20% 12%;
-    --accent-foreground: 173 82% 53%;
+    --accent-foreground: 173 75% 42%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 180 15% 20%;
     --input: 180 15% 20%;
-    --ring: 173 82% 53%;
+    --ring: 173 75% 42%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 180 30% 6%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 173 82% 53%;
+    --sidebar-primary: 173 75% 42%;
     --sidebar-primary-foreground: 180 30% 6%;
     --sidebar-accent: 180 20% 12%;
-    --sidebar-accent-foreground: 173 82% 53%;
+    --sidebar-accent-foreground: 173 75% 42%;
     --sidebar-border: 180 15% 20%;
-    --sidebar-ring: 173 82% 53%;
+    --sidebar-ring: 173 75% 42%;
+  }
+
+  /* Ash/Slate Theme - Premium Professional Monochrome */
+  .ash {
+    --background: 220 15% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 215 15% 75%; /* Premium Silver/Ash */
+    --primary-foreground: 220 15% 4%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 10% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 220 15% 12%;
+    --accent-foreground: 215 15% 75%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 215 15% 75%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 15% 4%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 215 15% 75%;
+    --sidebar-primary-foreground: 220 15% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 215 15% 75%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 215 15% 75%;
   }
 }
 
@@ -104,6 +146,16 @@
   .teal html,
   .teal body {
     background: linear-gradient(135deg, #0a1414 0%, #0d1a1a 25%, #0f2020 50%, #0a1414 75%, #0d1a1a 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Ash theme background */
+  .ash html,
+  .ash body {
+    background: linear-gradient(135deg, #0c0d0e 0%, #16181d 25%, #0c0d0e 50%, #1a1c22 75%, #0c0d0e 100%);
     background-attachment: fixed;
     min-height: 100vh;
     background-size: 400% 400%;
@@ -199,6 +251,25 @@
   animation: fadeIn 0.5s ease-out forwards;
 }
 
+@keyframes theme-pulse {
+  0% { 
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 12px 4px hsl(var(--primary) / 0.2);
+    transform: scale(1.08);
+  }
+  100% { 
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+    transform: scale(1);
+  }
+}
+
+.animate-theme-pulse {
+  animation: theme-pulse 2.5s infinite ease-in-out;
+}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -211,11 +282,11 @@
   }
 }
 .bg-gradient-fire {
-  background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #ffb300 100%);
 }
 
 .text-gradient-fire {
-  background: linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #e65100 0%, #f57c00 50%, #ffb300 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -241,3 +312,16 @@
 .bg-teal-light {
   background: linear-gradient(135deg, #5eead4 0%, #99f6e4 100%);
 }
+
+/* Ash Gradient Theme */
+.bg-gradient-ash {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 50%, #64748b 100%);
+}
+
+.text-gradient-ash {
+  background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 50%, #64748b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+

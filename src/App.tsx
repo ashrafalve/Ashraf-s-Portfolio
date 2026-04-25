@@ -31,17 +31,17 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider
-        defaultTheme="dark"
+        defaultTheme="ash"
         attribute="class"
         enableSystem={false}
         disableTransitionOnChange
-        themes={["dark", "teal"]}
+        themes={["dark", "teal", "ash"]}
       >
         <TooltipProvider>
           <CustomCursor />
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="*" element={<NotFound />} />

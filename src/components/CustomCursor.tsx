@@ -38,8 +38,9 @@ const CustomCursor = () => {
           height: "40px",
           left: position.x - 20,
           top: position.y - 20,
-          background: "linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ffa500 100%)",
-          opacity: 0.3,
+          background: "hsl(var(--primary))",
+          opacity: 0.2,
+          boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
         }}
       />
       {/* Inner Dot/Point */}
@@ -50,7 +51,8 @@ const CustomCursor = () => {
           height: "8px",
           left: dotPosition.x - 4,
           top: dotPosition.y - 4,
-          background: "linear-gradient(135deg, #ff4500 0%, #ff6b35 50%, #ffa500 100%)",
+          background: "hsl(var(--primary))",
+          boxShadow: "0 0 10px hsl(var(--primary) / 0.5)",
         }}
       />
     </>

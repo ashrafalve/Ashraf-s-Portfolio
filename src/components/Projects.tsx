@@ -3,12 +3,48 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    title: "UpCycle/RemakeX",
+    category: "Upcycling Marketplace",
+    desc: "The innovative marketplace to buy, sell, and creatively upcycle pre-loved products. Give your old items a second life with custom designs from talented artists.",
+    tags: ["Marketplace", "Upcycling", "Sustainability"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fupcycle-project.vercel.app%2F?w=1200",
+    liveDemo: "https://upcycle-project.vercel.app/",
+    github: "https://github.com/ashrafalve/Upcycle-Project",
+  },
+  {
     title: "FoodKart",
     category: "Food Delivery Platform",
     desc: "Modern food delivery platform with restaurant listings and ordering capabilities.",
     tags: ["Food Delivery", "E-commerce", "Live Demo"],
-    img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop",
+    img: "/foodkart.png",
     liveDemo: "https://ashrafalve.github.io/Foodkart-Web-App/",
+    github: "https://github.com/ashrafalve",
+  },
+  {
+    title: "AI Voice Receptionist",
+    category: "Real-time Voice Agent Dashboard",
+    desc: "A sophisticated dashboard for a real-time Twilio voice agent receptionist. Features modern UI for managing AI-driven voice interactions and call logs.",
+    tags: ["Twilio", "AI Voice", "Dashboard", "React"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffai-dashboarddesign.netlify.app%2F?w=1200",
+    liveDemo: "https://fai-dashboarddesign.netlify.app/",
+    github: "https://github.com/ashrafalve/FAI-Dashboard-Design-Task",
+  },
+  {
+    title: "StayLux",
+    category: "Hotel Booking Platform",
+    desc: "A full-stack hotel booking platform with Next.js frontend and NestJS backend. Features user roles, hotel/room management, and real-time booking status.",
+    tags: ["Next.js", "NestJS", "Full-stack", "MySQL"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fstayluxhotel.vercel.app%2F?w=1200",
+    liveDemo: "https://stayluxhotel.vercel.app/",
+    github: "https://github.com/ashrafalve",
+  },
+  {
+    title: "AI Project Analysis",
+    category: "AI-Powered SaaS Platform",
+    desc: "An award-winning AI tool that transforms client requirements into actionable project plans. Features automated task extraction and risk analysis for modern agencies.",
+    tags: ["AI", "Next.js", "SaaS", "Productivity"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Faiprojectanalysis.netlify.app%2F?w=1200",
+    liveDemo: "https://aiprojectanalysis.netlify.app/",
     github: "https://github.com/ashrafalve",
   },
   {
@@ -16,7 +52,7 @@ const projects = [
     category: "Grocery Shopping Platform",
     desc: "Comprehensive grocery e-commerce platform with delivery tracking and catalog management.",
     tags: ["E-commerce", "Grocery", "Live Demo"],
-    img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=250&fit=crop",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fashrafalve.github.io%2FGrocery-BD-Frontend%2F?w=1200",
     liveDemo: "https://ashrafalve.github.io/Grocery-BD-Frontend/",
     github: "https://github.com/ashrafalve",
   },
@@ -25,7 +61,7 @@ const projects = [
     category: "E-Commerce Website Frontend",
     desc: "Modern e-commerce platform with product listings, shopping cart, and checkout functionality.",
     tags: ["E-Commerce", "React", "Shopping Cart"],
-    img: "https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=250&fit=crop",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fashrafalve.github.io%2Fporto_ecommerce_Frontend%2F?w=1200",
     liveDemo: "https://ashrafalve.github.io/porto_ecommerce_Frontend/",
     github: "https://github.com/ashrafalve/porto_ecommerce_Frontend",
   },
@@ -39,20 +75,11 @@ const projects = [
     github: "https://github.com/ashrafalve",
   },
   {
-    title: "Expense Tracker",
-    category: "Budget Planning & Tracking",
-    desc: "Comprehensive expense tracking and budget planning application with offline capabilities.",
-    tags: ["Budget Planning", "Expense Tracking", "Offline App"],
-    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
-    liveDemo: "https://ashrafalve.github.io/Expense-Tracker-Offline/",
-    github: "https://github.com/ashrafalve",
-  },
-  {
     title: "Music Player",
     category: "PulseWave Music Player",
     desc: "A modern web-based music player with intuitive interface and smooth playback controls.",
     tags: ["Music Player", "Web Audio", "Live Demo"],
-    img: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=250&fit=crop",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fashrafalve.github.io%2FPulseWave_Music_Player%2F?w=1200",
     liveDemo: "https://ashrafalve.github.io/PulseWave_Music_Player/",
     github: "https://github.com/ashrafalve",
   },
@@ -70,7 +97,7 @@ const projects = [
     category: "Flutter Advance Expense Management",
     desc: "A advanced expense management app built with Flutter for tracking, budgeting, and financial planning.",
     tags: ["Flutter", "Mobile App", "Expense Tracker"],
-    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapkpure.com%2Fp%2Fcom.qmax.qmax?w=1200",
     liveDemo: "https://apkpure.com/p/com.qmax.qmax",
     github: "https://github.com/ashrafalve/Qmax-Expense-Tracker",
   },
@@ -79,7 +106,7 @@ const projects = [
     category: "Your Personal Fitness Companion",
     desc: "A comprehensive fitness tracking application to help you achieve your health and wellness goals. Features workout tracking, diet management, profile management, and AI-powered personalized recommendations.",
     tags: ["Fitness", "React Vite", "AI"],
-    img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=250&fit=crop",
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fashrafalve.github.io%2FFit-Nation%2F?w=1200",
     liveDemo: "https://ashrafalve.github.io/Fit-Nation/",
     github: "https://github.com/ashrafalve/Fit-Nation",
   },
@@ -99,11 +126,11 @@ const TeamSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project) => (
             <div key={project.title} className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300">
-              <div className="h-32 md:h-40 overflow-hidden relative">
+              <div className="h-48 md:h-56 overflow-hidden relative">
                 <img 
                   src={project.img} 
                   alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
                   {project.liveDemo && (
