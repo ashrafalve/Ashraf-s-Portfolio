@@ -69,9 +69,9 @@ const projects = [
     title: "ShopFinder",
     category: "Local Business Discovery",
     desc: "Find nearby retail shops by category and location, supporting local businesses.",
-    tags: ["Business Directory", "Location Services", "GitHub"],
-    img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop",
-    liveDemo: "",
+    tags: ["Business Directory", "Location Services", "Live Demo"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fshopfinders.netlify.app%2F?w=1200",
+    liveDemo: "https://shopfinders.netlify.app/",
     github: "https://github.com/ashrafalve",
   },
   {

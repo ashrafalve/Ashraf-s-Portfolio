@@ -19,7 +19,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <ScrollReveal animation="fade-up" once={false}>
         <Hero />

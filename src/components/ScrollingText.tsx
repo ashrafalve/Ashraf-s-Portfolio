@@ -9,11 +9,13 @@ import githubIcon from "@/assets/icons/github_icon.png";
 import pythonIcon from "@/assets/icons/python_icon.png";
 import htmlIcon from "@/assets/icons/html_icon.png";
 import cssIcon from "@/assets/icons/css_icon.png";
+import nextIcon from "@/assets/icons/nextjslogo.png";
 
 const bigText = "WEB DEVELOPER • APP DEVELOPER •  SOFTWARE ENTHUSIAST • UI/UX DESIGNER";
 
 const bigTextIcons = [
   { name: "React", icon: reactIcon },
+  { name: "Next.js", icon: nextIcon },
   { name: "JavaScript", icon: jsIcon },
   { name: "TypeScript", icon: tsIcon },
   { name: "Android", icon: androidStudioIcon },
@@ -25,6 +27,7 @@ const bigTextIcons = [
 
 const tagsIcons = [
   { name: "React", icon: reactIcon },
+  { name: "Next.js", icon: nextIcon },
   { name: "JavaScript", icon: jsIcon },
   { name: "TypeScript", icon: tsIcon },
   { name: "Android", icon: androidStudioIcon },

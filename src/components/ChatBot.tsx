@@ -69,7 +69,7 @@ const getAnswer = (question: string): string => {
   
   // CV/Resume
   if (faqQuestions.slice(34, 36).some(kw => q.includes(kw))) {
-    return "You can view my CV here:\nhttps://drive.google.com/file/d/1kFprJgMqvg26TjfqWkEW3ENfQMa9PoO3/view?usp=sharing";
+    return "You can view my CV here:\n/Ashraf_Ahmed_Resume.pdf";
   }
   
   // React Native
@@ -154,7 +154,7 @@ const ChatBot = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
+        className="fixed bottom-32 md:bottom-6 right-6 z-50 w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer"
       >
         <MessageCircle className="w-7 h-7 text-primary-foreground" />
       </button>
@@ -162,7 +162,7 @@ const ChatBot = () => {
       {/* Chat Window */}
       {isOpen && (
         <div 
-          className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] max-h-[70vh] md:max-h-[500px] bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-4"
+          className="fixed bottom-48 md:bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] max-h-[70vh] md:max-h-[500px] bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-4"
           onClick={() => setIsOpen(false)}
         >
           {/* Header */}

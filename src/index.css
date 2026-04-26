@@ -134,6 +134,13 @@
     @apply border-border;
   }
 
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+  }
+
   html {
     background: linear-gradient(135deg, #0F0E0F 0%, #1a0808 25%, #0F0E0F 50%, #2a0a0a 75%, #0F0E0F 100%);
     background-attachment: fixed;
@@ -173,6 +180,26 @@
 
   a, button, [role="button"] {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mobile App Polish */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 20px;
+    }
+    
+    body {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      overflow-x: hidden;
+    }
+
+    /* Allow selection in inputs/textareas */
+    input, textarea {
+      user-select: text;
+    }
   }
 }
 
@@ -187,6 +214,19 @@
 
   .marquee-slow {
     animation: marquee 60s linear infinite;
+  }
+
+  /* Ultra Fast Marquee for Mobile */
+  @media (max-width: 768px) {
+    .marquee {
+      animation-duration: 8s;
+    }
+    .marquee-reverse {
+      animation-duration: 8s;
+    }
+    .marquee-slow {
+      animation-duration: 15s;
+    }
   }
 }
 

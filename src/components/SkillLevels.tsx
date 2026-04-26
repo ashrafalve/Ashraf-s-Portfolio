@@ -10,17 +10,18 @@ import githubIcon from "@/assets/icons/github_icon.png";
 import firebaseIcon from "@/assets/icons/firebase_icon.png";
 import tsIcon from "@/assets/icons/typescript_icon.png";
 import pyIcon from "@/assets/icons/python_icon.png";
+import nextIcon from "@/assets/icons/nextjslogo.png";
 
 const skillLevels = [
-  { name: "React / React Native", level: 80, icon: reactIcon },
+  { name: "React / Next.js", level: 85, icon: nextIcon },
+  { name: "Mobile App Development", level: 80, icon: androidStudioIcon },
   { name: "JavaScript / TypeScript", level: 80, icon: jsIcon },
   { name: "HTML / CSS ", level: 90, icon: htmlIcon },
-  { name: "Application Development", level: 80, icon: androidStudioIcon },
-  { name: "Design (Adobe Illustrator/Figma/Stitch)", level: 60, icon: uiuxIcon },
+  { name: "Design (Illustrator/Figma)", level: 60, icon: uiuxIcon },
   { name: "Django / REST APIs", level: 80, icon: sqlIcon },
   { name: "Python / Fast APIs", level: 70, icon: pyIcon },
   { name: "Git / GitHub", level: 90, icon: githubIcon },
-  { name: "Firebase / Subabase", level: 80, icon: firebaseIcon },
+  { name: "Firebase / Supabase", level: 80, icon: firebaseIcon },
 ];
 
 const PricingSection = () => {

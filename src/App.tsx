@@ -10,6 +10,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ChatBot from "@/components/ChatBot";
 import Game from "@/components/Game";
 import AIArena from "@/components/AIArena";
+import MobileNav from "@/components/MobileNav";
 import { useState } from "react";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => {
           <CustomCursor />
           <Toaster />
           <Sonner />
+          <MobileNav />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Routes>
             <Route path="/" element={<Index />} />

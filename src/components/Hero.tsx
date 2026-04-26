@@ -73,16 +73,16 @@ const Hero = () => {
             </Badge>
 
             <div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight whitespace-nowrap">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 Hi, I'm <span className="text-primary">Ashraf</span> <span className="text-primary">{typedText}</span><span className="animate-pulse">|</span>
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight mt-4 text-primary">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight mt-4 text-primary break-words">
                 Web & Mobile App Developer | Software & Frontend Enthusiast | CSE Graduate
               </p>
             </div>
 
             <p className="text-muted-foreground text-lg max-w-md">
-              A passionate developer with experience in React Native, Python, C/C++, and Java. CSE graduate from University of Asia Pacific.
+              A passionate developer with experience in React Native, Flutter, Python, C/C++, and Java. CSE graduate from University of Asia Pacific.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -90,7 +90,7 @@ const Hero = () => {
                 View Projects <ArrowRight className="w-4 h-4" />
               </Button>
               <Button size="lg" variant="outline" className="rounded-full gap-2 px-8" asChild>
-                <a href="/Ashraf-Ahmed-Alve-Updated-Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/Ashraf_Ahmed_Resume.pdf" target="_blank" rel="noopener noreferrer">
                   View CV <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>

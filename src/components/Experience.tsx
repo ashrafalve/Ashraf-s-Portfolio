@@ -65,7 +65,7 @@ const Experience = () => {
                     </div>
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="pl-12">
+                <AccordionContent className="pl-6 sm:pl-12">
                   <p className="text-muted-foreground text-sm mb-3 flex items-center gap-1">
                     <Calendar className="w-3 h-3" /> {exp.period}
                   </p>

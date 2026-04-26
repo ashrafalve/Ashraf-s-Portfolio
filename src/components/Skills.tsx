@@ -23,6 +23,7 @@ import supabaseIcon from "@/assets/icons/supabase_icon.png";
 import vscodeIcon from "@/assets/icons/VSCode_icon.png";
 import uiuxIcon from "@/assets/icons/uiux_icon.png";
 import msofficeIcon from "@/assets/icons/msoffice_icon.png";
+import nextIcon from "@/assets/icons/nextjslogo.png";
 
 const allSkills = [
   { name: "C", icon: cppIcon },
@@ -48,6 +49,7 @@ const allSkills = [
   { name: "GitHub", icon: githubIcon },
   { name: "UI/UX", icon: uiuxIcon },
   { name: "MS Office", icon: msofficeIcon },
+  { name: "Next.js", icon: nextIcon },
 ];
 
 interface Particle {
@@ -319,6 +321,7 @@ const skillCategories = [
       { name: "CSS", icon: cssIcon },
       { name: "Django", icon: djangoIcon },
       { name: "React", icon: reactIcon },
+      { name: "Next.js", icon: nextIcon },
       { name: "SQL", icon: sqlIcon },
       { name: "REST API", icon: restApiIcon },
       { name: "FastAPI", icon: fastApiIcon },

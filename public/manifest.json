@@ -1,0 +1,21 @@
+{
+  "name": "Ashraf Ahmed Alve | Portfolio",
+  "short_name": "Ashraf.Portfolio",
+  "description": "Premium Professional Portfolio of Ashraf Ahmed Alve",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0E0F",
+  "theme_color": "#215 15% 75%",
+  "icons": [
+    {
+      "src": "/profile.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/profile.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

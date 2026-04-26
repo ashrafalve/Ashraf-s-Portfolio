@@ -29,7 +29,7 @@ const ScrollToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all duration-300 hover:scale-110 cursor-pointer"
+      className="fixed bottom-32 md:bottom-8 left-6 md:left-auto md:right-8 z-50 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all duration-300 hover:scale-110 cursor-pointer"
       aria-label="Scroll to top"
     >
       <ChevronUp className="w-6 h-6" />
