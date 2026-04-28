@@ -1,5 +1,6 @@
-import { ArrowRight, Github, ExternalLink, Globe } from "lucide-react";
+import { ArrowRight, Github, ExternalLink, Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const projects = [
   {
@@ -12,12 +13,12 @@ const projects = [
     github: "https://github.com/ashrafalve/Upcycle-Project",
   },
   {
-    title: "FoodKart",
-    category: "Food Delivery Platform",
-    desc: "Modern food delivery platform with restaurant listings and ordering capabilities.",
-    tags: ["Food Delivery", "E-commerce", "Live Demo"],
-    img: "/foodkart.png",
-    liveDemo: "https://ashrafalve.github.io/Foodkart-Web-App/",
+    title: "Mirpur Xpress",
+    category: "Restaurant Landing Page",
+    desc: "A premium, high-conversion restaurant landing page built with Next.js, featuring smooth animations and a mobile-first gourmet experience.",
+    tags: ["Restaurant", "Next.js", "Landing Page", "UX/UI"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fmirpurxpress.vercel.app%2F?w=1200",
+    liveDemo: "https://mirpurxpress.vercel.app/",
     github: "https://github.com/ashrafalve",
   },
   {
@@ -28,6 +29,15 @@ const projects = [
     img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffai-dashboarddesign.netlify.app%2F?w=1200",
     liveDemo: "https://fai-dashboarddesign.netlify.app/",
     github: "https://github.com/ashrafalve/FAI-Dashboard-Design-Task",
+  },
+  {
+    title: "FoodKart",
+    category: "Food Delivery Platform",
+    desc: "Modern food delivery platform with restaurant listings and ordering capabilities.",
+    tags: ["Food Delivery", "E-commerce", "Live Demo"],
+    img: "/foodkart.png",
+    liveDemo: "https://ashrafalve.github.io/Foodkart-Web-App/",
+    github: "https://github.com/ashrafalve",
   },
   {
     title: "StayLux",
@@ -113,6 +123,9 @@ const projects = [
 ];
 
 const TeamSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 9);
+
   return (
     <section id="projects" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
@@ -124,7 +137,7 @@ const TeamSection = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <div key={project.title} className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300">
               <div className="h-48 md:h-56 overflow-hidden relative">
                 <img 
@@ -183,7 +196,26 @@ const TeamSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="flex flex-col items-center gap-6 mt-12">
+          {projects.length > 9 && (
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-full gap-2 border-primary/50 text-primary hover:bg-primary/10 transition-all duration-300"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? (
+                <>
+                  Show Less <ChevronUp className="w-4 h-4" />
+                </>
+              ) : (
+                <>
+                  Load More <ChevronDown className="w-4 h-4" />
+                </>
+              )}
+            </Button>
+          )}
+
           <Button size="lg" className="rounded-full gap-2 px-8" asChild>
             <a href="https://github.com/ashrafalve?tab=repositories" target="_blank" rel="noopener noreferrer">
               View All Projects <ArrowRight className="w-4 h-4" />
