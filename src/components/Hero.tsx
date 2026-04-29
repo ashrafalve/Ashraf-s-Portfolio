@@ -73,7 +73,7 @@ const Hero = () => {
             </Badge>
 
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Hi, I'm <span className="text-primary">Ashraf</span> <span className="text-primary">{typedText}</span><span className="animate-pulse">|</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight mt-4 text-primary break-words">
