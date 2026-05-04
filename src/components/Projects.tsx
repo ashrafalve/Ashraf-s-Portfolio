@@ -31,6 +31,15 @@ const projects = [
     github: "https://github.com/ashrafalve/FAI-Dashboard-Design-Task",
   },
   {
+    title: "Quran Mazid App",
+    category: "Quran Learning & Reading Web App",
+    desc: "A comprehensive Quran learning and reading platform featuring a Next.js frontend and Node.js backend for a seamless spiritual experience.",
+    tags: ["Next.js", "Node.js", "Spiritual", "Full-stack"],
+    img: "https://s.wordpress.com/mshots/v1/https%3A%2F%2Fquranmazidapp.vercel.app%2F?w=1200",
+    liveDemo: "https://quranmazidapp.vercel.app/",
+    github: "https://github.com/ashrafalve/QuranWebApp",
+  },
+  {
     title: "FoodKart",
     category: "Food Delivery Platform",
     desc: "Modern food delivery platform with restaurant listings and ordering capabilities.",
